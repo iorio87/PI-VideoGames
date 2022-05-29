@@ -15,7 +15,7 @@ router.use(express.json())
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.use('/videogame', videogame);
+router.use('/videogames', videogame);
 router.use('/genres', genres);
 
 

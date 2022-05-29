@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const { Genre } = require('../db.js');
+const axios = require('axios')
 
 
 // router.get('/', async(req, res) => {
@@ -9,8 +10,8 @@ const { Genre } = require('../db.js');
 // })
 
 router.post('/', async (req, res) => {
-    const {name, id} = req.body;
-    if(!name || !id) return res.status(404).send('Falta enviar datos obligatorios')
+    const { name, id } = req.body;
+    if (!name || !id) return res.status(404).send('Falta enviar datos obligatorios')
     try {
         const genre = await Genre.create(req.body)
         return res.status(201).send(genre)
