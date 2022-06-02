@@ -5,18 +5,24 @@ const axios = require('axios');
 const { Op } = require('sequelize');
 
 const getApiGames = async () => {
-    const response = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`)
-    const games = await response.data.results.map(e => {
-        return {
-            id: e.id,
-            name: e.name,
-            released: e.released,
-            rating: e.rating,
-            image: e.background_image,
-            platforms: e.platforms.map(e => e.platform.name),
-            genres: e.genres.map(e => e.name)
-        }
-    })
+    let API = `https://api.rawg.io/api/games?key=${API_KEY}&page_size=40`
+    const games = []
+    for (i = 0; i < 2; i++) {
+        const response = await axios.get(API)
+        response.data.results.map(e => {
+            return games.push({
+                id: e.id,
+                name: e.name,
+                released: e.released,
+                rating: e.rating,
+                image: e.background_image,
+                platforms: e.platforms.map(e => e.platform.name),
+                genres: e.genres.map(e => e.name)
+            })
+        })
+       API = response.data.next 
+    }
+
     return games
 }
 

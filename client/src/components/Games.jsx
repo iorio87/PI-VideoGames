@@ -5,18 +5,17 @@ import Game from './Game'
 import './games.css'
 
 function Games() {
-const games = useSelector(state => state.games)
+const {games} = useSelector(state => state)
 let dispatch = useDispatch()
 
 useEffect(() => {
   dispatch(getGames())  
 }, [])
 
-console.log(games);
   return (
     <div className='contenedor'>
         {games.map(e => {
-            return <Game name={e.name} image={e.image}/>
+            return <Game name={e.name} image={e.image} key={e.id}/>
         })}
     </div>
   )
