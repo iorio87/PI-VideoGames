@@ -5,9 +5,9 @@ const axios = require('axios');
 const { Op } = require('sequelize');
 
 const getApiGames = async () => {
-    let API = `https://api.rawg.io/api/games?key=${API_KEY}&page_size=40`
+    let API = `https://api.rawg.io/api/games?key=${API_KEY}&page_size=34`
     const games = []
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < 3; i++) {
         const response = await axios.get(API)
         response.data.results.map(e => {
             return games.push({

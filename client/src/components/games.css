@@ -5,3 +5,16 @@
     margin: 20px;
     
 }
+
+li{
+    display: inline;
+    margin: 0 10px;  
+    padding: 6px 3px;  
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+a {
+    padding: 12px 12px;
+}

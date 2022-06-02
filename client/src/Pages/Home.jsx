@@ -4,17 +4,20 @@ import Games from '../components/Games'
 import Header from '../components/Header'
 import Loader from '../components/Loader'
 import OrderFilter from '../components/OrderFilter'
+
 import './home.css'
 
 function Home() {
-  const {loading}= useSelector(state => state)  
+  const {loading}= useSelector(state => state) 
+  
+
   return (
-    <div>
+    <div className='bg'>
       <Header />
       <div className="container">
         
         <div>
-          <OrderFilter/>
+          <OrderFilter/>          
         </div>
         <div>
 
