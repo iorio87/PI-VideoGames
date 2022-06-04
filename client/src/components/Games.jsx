@@ -5,23 +5,27 @@ import Game from './Game'
 import './games.css'
 import Pagination from './Pagination'
 
+
 function Games() {
   const { games } = useSelector(state => state)
   let dispatch = useDispatch()
 
   // Paginado 
-  const [currentePage, setCurrentePage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1)
   const [gamesPerPage, setGamesPerPage] = useState(15)
-  const LastGameForPage = currentePage * gamesPerPage
+  const LastGameForPage = currentPage * gamesPerPage
   const FirtGameForPage = LastGameForPage - gamesPerPage
   const currentGames = games.slice(FirtGameForPage, LastGameForPage)
 
   const paginado = (pageNumber) => {
-    setCurrentePage(pageNumber)
+    return setCurrentPage(pageNumber)
   }
+
+  console.log('la pagina actual es: ' + currentPage);
 
   useEffect(() => {
     dispatch(getGames())
+    console.log('desde useeffect' + currentPage)
   }, [])
 
 
@@ -32,7 +36,8 @@ function Games() {
       </div>
       <div className='contenedor'>
         {currentGames.map(e => {
-          return <Game name={e.name} image={e.image} key={e.id} />
+          
+          return <Game name={e.name} image={e.image} key={e.id} id={e.id} genres={e.genres}/>
         })}
       </div>
     </div>

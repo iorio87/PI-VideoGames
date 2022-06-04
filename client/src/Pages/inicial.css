@@ -6,7 +6,7 @@
     opacity: 90%;
 }
 
-button {
+.btn-inicio {
     background: #FBCA1F;
     font-family: inherit;
     padding: 0.6em 1.3em;
@@ -18,13 +18,13 @@ button {
     margin-top: 2rem;
    }
    
-   button:hover {
+   .btn-inicio:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
     cursor: pointer;
    }
    
-   button:active {
+   .btn-inicio:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
    }

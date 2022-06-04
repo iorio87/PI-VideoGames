@@ -38,7 +38,8 @@ const getDBGames = async () => {
             rating: e.rating,
             image: e.image,
             platforms: e.platforms,
-            genres: e.genres.map(e => e.name)
+            genres: e.genres.map(e => e.name),
+            created: e.createdAt
         }
     })
     return games

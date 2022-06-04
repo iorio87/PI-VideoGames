@@ -1,0 +1,10 @@
+label{
+    margin: 0 5px;
+}
+
+option{
+    background: black;
+    color: white;
+    border: none;
+    border: 5px solid rebeccapurple;
+}

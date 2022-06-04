@@ -8,7 +8,7 @@ function Inicial() {
     return (
 
         <div className='img'>
-            <button onClick={()=> {navigate('/home')}}>INGRESAR</button>
+            <button onClick={()=> {navigate('/home')}} className='btn-inicio'>INGRESAR</button>
             <p className='fuente'>VIDEO GAMES APP</p>
 
         </div>

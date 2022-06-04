@@ -4,7 +4,6 @@ import Games from '../components/Games'
 import Header from '../components/Header'
 import Loader from '../components/Loader'
 import OrderFilter from '../components/OrderFilter'
-
 import './home.css'
 
 function Home() {
@@ -12,7 +11,8 @@ function Home() {
   
 
   return (
-    <div className='bg'>
+    <div>
+      
       <Header />
       <div className="container">
         
@@ -24,6 +24,7 @@ function Home() {
           {loading && <Loader/>}
           <Games />
         </div>
+        
 
       </div>
 
