@@ -1,6 +1,7 @@
 .bg {
       
-    background-image: url(../img/bg.jpg);
-    background-size: cover;
-    opacity: 90%;
+    background-image: url(../img/fondo3.jpg);    
+    background-size: cover;  
+    background-attachment: fixed; 
+    min-height: 100vh;      
 }

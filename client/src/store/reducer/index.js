@@ -18,7 +18,7 @@ export function reducer(state = initialState, action) {
 
   if (action.type === SEARCH_GAMES) {
     return {
-      ...state,      
+      ...state,
       games: action.payload.data
     }
   }
@@ -45,34 +45,55 @@ export function reducer(state = initialState, action) {
   }
 
   if (action.type === FILTER_BY_GENRE) {
-    const games = state.tofiltergames 
-    
+    const games = state.tofiltergames
+
     const filter = games.filter(e => {
       return e.genres.some(g => g === action.payload)
-    })     
-    
+    })
+
     return {
       ...state,
-      games: filter
+      games: action.payload === 'todos' ? state.tofiltergames : filter
     }
   }
 
   if (action.type === FILTER_SOURCE) {
-    const allgames = state.tofiltergames
-    //const filtrados = allgames.filter(e => e.created)
-    
-    const gameSource = action.payload === 'agregado' ? allgames.filter(e => e.created) : allgames.filter(e => !e.created)
-    
+    const games = state.tofiltergames
+    const gameSource = action.payload === 'agregado' ? games.filter(e => e.created) : games.filter(e => !e.created)
+
     return {
       ...state,
-      games: action.payload === 'todos' ? state.tofiltergames : gameSource     
+      games: action.payload === 'todos' ? state.tofiltergames : gameSource
     }
   }
 
   if (action.type === ORDER) {
+
+    if (action.payload === 'az') {
+      state.games.sort((a, b) => {
+        return a.name < b.name ? -1 : 1
+      })
+    }
+    if (action.payload === 'za') {
+      state.games.sort((a, b) => {
+        return a.name < b.name ? 1 : -1
+      })
+    }
+
+    if (action.payload === 'ascendente') {
+      state.games.sort((a, b) => {
+        return a.rating < b.rating ? -1 : 1
+      })
+    }
+    if (action.payload === 'descendente') {
+      state.games.sort((a, b) => {
+        return a.rating < b.rating ? 1 : -1
+      })
+    }
+
     return {
       ...state,
-      games: action.payload
+      games: state.games
     }
   }
 

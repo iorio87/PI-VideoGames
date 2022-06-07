@@ -11,7 +11,7 @@ function Home() {
   
 
   return (
-    <div>
+    <div className='bg size'>
       
       <Header />
       <div className="container">

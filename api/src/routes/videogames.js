@@ -12,7 +12,9 @@ router.get('/', async (req, res) => {
             return {
                 name: e.name,
                 image: e.background_image,
-                genres: e.genres.map(e => e.name)
+                id: e.id,
+                genres: e.genres.map(e => e.name),
+                rating: e.rating
             }
 
         })

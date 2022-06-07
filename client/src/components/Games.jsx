@@ -26,8 +26,8 @@ function Games() {
   useEffect(() => {
     dispatch(getGames())
     console.log('desde useeffect' + currentPage)
-  }, [])
 
+  }, [])
 
   return (
     <div>
@@ -37,7 +37,7 @@ function Games() {
       <div className='contenedor'>
         {currentGames.map(e => {
           
-          return <Game name={e.name} image={e.image} key={e.id} id={e.id} genres={e.genres}/>
+          return <Game name={e.name} image={e.image} key={e.id} id={e.id} genres={e.genres} rating={e.rating}/>
         })}
       </div>
     </div>

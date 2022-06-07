@@ -1,5 +1,13 @@
 label{
-    margin: 0 5px;
+    margin: 0 7px;
+}
+
+.select {
+    background: black;
+    border: 2px solid #07ff07;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
 }
 
 option{

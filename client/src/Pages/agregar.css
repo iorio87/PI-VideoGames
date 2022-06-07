@@ -1,0 +1,64 @@
+.agregar-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.agregar-form {
+    width: 910px;
+    height: 95vh;
+    background: black;
+    border: 2px solid #ff0303;
+    border-radius: 10px;
+    box-shadow: 2px 2px 25px #ff0303 inset;
+
+    color: #e8e8e8;
+}
+
+.agregar-div {
+    margin-top: 15px;
+}
+
+.agregar-input {
+    width: 350px;
+    border: 2px solid #ff0303;
+}
+
+.agregar-input:focus {
+    border: 3px solid #ff0303;
+    box-shadow: 2px 2px 25px #ff0303;
+    outline: none;
+}
+
+.agregar-label {
+    width: 200px;
+    display: inline-block;
+}
+
+textarea {
+    resize: none;
+}
+
+.agregar-btn {
+    padding: 10px;
+    margin-top: 18px;
+    background: rgb(204, 7, 7);
+    font-weight: bold;
+    font-size: large;    
+}
+
+.agregar-btn:hover{
+    cursor: pointer;
+    border: 2px solid white;
+    color: white;
+}
+
+.agregar-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin-right: 5px;
+    
+}

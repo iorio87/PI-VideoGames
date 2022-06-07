@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getGenres, FilterByGenre, FilterSource} from '../store/actions/index'
+import {getGenres, FilterByGenre, FilterSource, Order} from '../store/actions/index'
 import './orderfilter.css'
 
 function OrderFilter() {
@@ -12,17 +12,10 @@ function OrderFilter() {
     }, [])
 
 
-    // const Alfabetico = (e) => {
-    //   const opcion = e.target.value
-
-    //   if(opcion === 'ascendente') {
-    //     games.sort((a, b)=> {
-    //       return a.name < b.name ? -1 : 1
-    //     })
-    //   }
-
-    //   dispatch(Order(opcion))
-    // }
+    const HandleOrder = (e) => {
+      const opcion = e.target.value      
+      dispatch(Order(opcion))
+    }
 
     const HandleFIlterByGenre = (e) => {
       const opcion = e.target.value 
@@ -36,18 +29,18 @@ function OrderFilter() {
     }
         
   return (
-    <div className='option'>
+    <div className='select'>
         <label htmlFor="ordenar">ORDENAR</label>
-          <select name="ordenar">
+          <select name="ordenar" onChange={e => HandleOrder(e)}>
             <option value="">Selecciona</option>
-            <option value="ascendente">Ascendente</option>
-            <option value="descendente">Descendente</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
 
           </select>
           
           <label htmlFor="genero">GENERO</label>
           <select name="genero" onChange={e => HandleFIlterByGenre(e)}>
-              <option value="">Selecciona</option>
+              <option value="todos">Todos</option>
             {/* Me traigo los generos del back y los inyecto */}
             {genres.map(genre =>{
                 return <option value={genre.name} key={genre.id}>{genre.name}</option>
@@ -56,10 +49,10 @@ function OrderFilter() {
           </select>
 
           <label htmlFor="rating">RATING</label>
-          <select name="rating" id="">
+          <select name="rating" onChange={e => HandleOrder(e)}>
             <option value="">Selecciona</option>
-            <option value="mayor">Mayor a Menor</option>
-            <option value="menor">Menor a Mayor</option>
+            <option value="ascendente">Menor a Mayor</option>
+            <option value="descendente">Mayor a Menor</option>
 
           </select>
 

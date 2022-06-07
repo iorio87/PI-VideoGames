@@ -1,0 +1,32 @@
+.header-container{
+    display: inline-flex;
+    margin-top: 2px;
+}
+
+.btn-buscar{
+    background: black;
+    border: 3px solid #07ff07;
+    color: white;
+    padding: 5px;
+}
+
+.btn-buscar:hover{
+    box-shadow: 2px 2px 8px #07ff07 inset;
+    cursor: pointer;
+}
+
+.buscar{
+    background: black;
+    border: 3px solid #07ff07;
+    color: white;
+    padding: 5px;
+    margin-right: 5px;
+    width: 300px;
+}
+
+.agregar{
+   text-decoration: none;
+   background: #0cda0c;
+   border: 3px solid black;
+   color: black;   
+}

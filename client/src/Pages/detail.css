@@ -6,24 +6,25 @@
 }
 
 .detail {
-  width: 900px;
-  height: 800px;
+  width: 920px;
+  height: 950px;
   background: black;
   border: 2px solid #ff0303;
   border-radius: 10px;
   box-shadow: 2px 2px 25px #ff0303 inset;
   text-align: center;
   color: #e8e8e8;
-  font-family: 'Pacifico';
-
+  
 }
 
 .descripcion{
   padding: 0 30px;
+  font-size: 14px;
 }
 
 span{
   font-weight: bold;
+  color: #ff0303;
 }
 
 .btn-detail{

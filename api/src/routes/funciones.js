@@ -84,7 +84,7 @@ const getGameById = async (id) => {
 }
 
 const getGameByName = async (name) => {
-    const response = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`)
+    const response = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=15&search=${name}`)
     //const filterGames = games.filter(e => e.name.toLowerCase().includes(name.toLowerCase()))    
     const APIgames = await response.data.results
     const DBGames = await Videogame.findAll({
@@ -96,7 +96,8 @@ const getGameByName = async (name) => {
         }
     })
     const games = [...DBGames, ...APIgames]
-    return games.slice(0, 15) //lo limito a 15 resultados
+    return games
+    // return games.slice(0, 15) //lo limito a 15 resultados
 }
 
 const getGenres = async () => {
