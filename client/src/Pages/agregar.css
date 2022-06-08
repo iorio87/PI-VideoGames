@@ -5,6 +5,10 @@
     
 }
 
+.agregar-h1{
+    margin: 0;
+}
+
 .agregar-form {
     width: 910px;
     height: 95vh;
@@ -20,9 +24,14 @@
     margin-top: 15px;
 }
 
+.agregar-descripcion{
+    margin-bottom: 30px;
+}
+
 .agregar-input {
     width: 350px;
     border: 2px solid #ff0303;
+    color: black;
 }
 
 .agregar-input:focus {
@@ -58,7 +67,11 @@ textarea {
     display: inline-block;
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 13px;
     margin-right: 5px;
-    
+    font-style: italic;    
+}
+
+.agregar-span{
+    font-size: 13px;
 }

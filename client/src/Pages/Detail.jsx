@@ -23,18 +23,18 @@ function Detail() {
     
     return (
         <div className='flex'>
-            {loading && <Loader />}
+            {loading && <Loader/>}
             {game &&
                 <>
                 <button onClick={() => navigate('/home')} className='btn-detail'>Home</button>
                     <div className='detail'>
                         <h1>{game.name}</h1>
                         <img src={game.image} alt="" width={300} height={300} />
-                        <p className='descripcion'> <span>Descripcion: </span>  {game.description.replace(/(<([^>]+)>)/ig, '')}</p>
-                        <p> <span>Generos: </span>  {game.genres.map(e => ` ${e}` )}</p>                        
-                        <p> <span>Fecha de Lanzamiento: </span>  {game.released}</p>
-                        <p> <span>Rating: </span>  {game.rating}</p>
-                        <p> <span>Plataformas: </span>  {game.platforms.map(e => ` ${e}` )}</p>
+                        <p className='descripcion'> <span className='detail-span'>Descripcion: </span>  {game.description.replace(/(<([^>]+)>)/ig, '')}</p>
+                        <p> <span className='detail-span'>Generos: </span>  {game.genres.map(e => ` ${e}` )}</p>                        
+                        <p> <span className='detail-span'>Fecha de Lanzamiento: </span>  {game.released}</p>
+                        <p> <span className='detail-span'>Rating: </span>  {game.rating}</p>
+                        <p> <span className='detail-span'>Plataformas: </span>  {game.platforms.map(e => ` ${e}` )}</p>
 
 
                     </div>

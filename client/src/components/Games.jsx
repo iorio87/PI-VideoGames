@@ -21,13 +21,14 @@ function Games() {
     return setCurrentPage(pageNumber)
   }
 
-  console.log('la pagina actual es: ' + currentPage);
+  //console.log('la pagina actual es: ' + currentPage);
 
   useEffect(() => {
     dispatch(getGames())
-    console.log('desde useeffect' + currentPage)
 
   }, [])
+
+  
 
   return (
     <div>
