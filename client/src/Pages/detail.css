@@ -1,8 +1,12 @@
-.flex {
+.detail-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;  
+  flex-direction: column; 
+  background-image: url(../img/detail.jpg);  
+  background-size: cover;
+  background-attachment: fixed; 
+  min-height: 100vh;
 }
 
 .detail {

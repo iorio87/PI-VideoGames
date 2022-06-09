@@ -22,7 +22,7 @@ function Detail() {
     }, [])
     
     return (
-        <div className='flex'>
+        <div className='detail-container'>
             {loading && <Loader/>}
             {game &&
                 <>
