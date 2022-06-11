@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getGenres } from '../store/actions'
+import { useNavigate } from 'react-router-dom';
+import { AddGame, getGenres } from '../store/actions'
 import './agregar.css'
 
 export function validate(input) {
@@ -35,6 +36,7 @@ export function validate(input) {
 };
 
 function Agregar() {
+    const navigate = useNavigate()
     const { genres } = useSelector(state => state)
     const [input, setInput] = useState({
         name: '',
@@ -79,14 +81,19 @@ function Agregar() {
             genres: input.genres.filter(e => e !== el),
             platforms: input.platforms.filter(e => e !== el)
         })
+    }
 
-
+    const handleSubmit = (e) => { 
+        e.preventDefault()      
+        dispatch(AddGame(input))
+        alert('Juego agregado con exito!')
+        navigate('/home')
     }
 
     return (
         <div className='agregar-container'>
 
-            <form action="" className='agregar-form'>
+            <form onSubmit={e => handleSubmit(e)} className='agregar-form'>
                 <h1 className='agregar-h1'>DATOS DEL JUEGO:</h1>
                 <div className='agregar-div'>
                     <label htmlFor="nombre" className='agregar-label'>Nombre: </label>
@@ -114,7 +121,7 @@ function Agregar() {
 
                 <div className='agregar-div'>
                     <label htmlFor="image" className='agregar-label'>Imagen: </label>
-                    <input type="file" id="image" name='image' value={input.image} onChange={handleChange} />
+                    <input type="text" id="image" name='image' className='agregar-input' value={input.image} onChange={handleChange} />
                 </div>
 
                 <div className='agregar-div agregar-descripcion'>
@@ -184,7 +191,7 @@ function Agregar() {
                     </div> : null
                 }
 
-                <button className='agregar-btn' type='submit'>AGREGAR</button>
+                <button className='agregar-btn' type='submit' >AGREGAR</button>
             </form>
         </div>
     )

@@ -7,6 +7,7 @@ export const HIDE_LOADER = 'HIDE_LOADER'
 export const FILTER_BY_GENRE = 'FILTER_BY_GENRE'
 export const FILTER_SOURCE = 'FILTER_SOURCE'
 export const ORDER = 'ORDER'
+export const ADD_GAME = 'ADD_GAME'
 
 export function getGames() {
   return function (dispatch) {
@@ -68,6 +69,19 @@ export function Order(order) {
     payload: order
   }
 
+}
+
+export function AddGame (game){
+  return function (dispatch) {    
+    axios.post('http://localhost:3001/videogame', game)
+      .then(response => {
+          console.log(response)
+          return response
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 }
 
 

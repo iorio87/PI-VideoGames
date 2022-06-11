@@ -1,4 +1,4 @@
-import { GET_GAMES, GET_GENRES, SEARCH_GAMES, SHOW_LOADER, HIDE_LOADER, ORDER, FILTER_BY_GENRE, FILTER_SOURCE } from "../actions";
+import { GET_GAMES, GET_GENRES, SEARCH_GAMES, SHOW_LOADER, HIDE_LOADER, ORDER, FILTER_BY_GENRE, FILTER_SOURCE, ADD_GAME } from "../actions";
 
 const initialState = {
   games: [],
@@ -94,6 +94,12 @@ export function reducer(state = initialState, action) {
     return {
       ...state,
       games: state.games
+    }
+  }
+
+  if (action.type === ADD_GAME) {
+    return {
+      ...state,
     }
   }
 

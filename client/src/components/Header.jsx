@@ -9,9 +9,10 @@ function Header() {
     const [search, setSearch] = useState('')
     const dispatch = useDispatch()
     return (
-        <div className='header-container'>            
+        <div className='header-container'> 
+        <NavLink to={'/agregar'} className='agregar' >Agregar Juego</NavLink>           
             
-            <form className=""
+            <form className="buscar-form"
                 onSubmit={(e) => {
                     e.preventDefault();   
                     dispatch(searchGames(search))                 
@@ -27,7 +28,7 @@ function Header() {
                 <input className="btn-buscar" type="submit" value="Buscar" />
             </form>
 
-            <NavLink to={'/agregar'} className='agregar' >Agregar Juego</NavLink>
+            {/* <NavLink to={'/agregar'} className='agregar' >Agregar Juego</NavLink> */}
 
         </div>
 

@@ -58,7 +58,16 @@ const getGameById = async (id) => {
 
     try {
         if (typeof id === 'string' && id.length > 10) {
-            game = await Videogame.findByPk(id)
+            const g = await Videogame.findByPk(id, {include: Genre })
+            game = {
+                name: g.name,
+                image: g.image,
+                description: g.description,
+                released: g.released,
+                rating: g.rating,
+                platforms: g.platforms.map(e => e),
+                genres: g.genres.map(e => e.name)
+            }
             return game
         } else {
             const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
@@ -102,7 +111,7 @@ const getGameByName = async (name) => {
 
 const getGenres = async () => {
     const response = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
-    const genres = response.data.results.map(e => { return e.name })
+    const genres = response.data.results.map(e =>  e.name )
     return genres
 }
 

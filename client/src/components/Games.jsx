@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { getGames } from '../store/actions/index'
 import Game from './Game'
 import './games.css'
@@ -31,8 +32,8 @@ function Games() {
   
 
   return (
-    <div>
-      <div className='pagination'>
+    <div>      
+      <div className='pagination'>        
         <Pagination gamesPerPage={gamesPerPage} games={games.length} paginado={paginado} />
       </div>
       <div className='contenedor'>

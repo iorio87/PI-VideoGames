@@ -22,13 +22,13 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     released: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
       defaultValue: DataTypes.NOW
     },
     rating: {
       type: DataTypes.FLOAT,
       defaultValue: null
-    },
+    },  
     platforms: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false

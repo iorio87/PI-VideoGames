@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         const game = filter.map(e => {
             return {
                 name: e.name,
-                image: e.background_image,
+                image: e.background_image? e.background_image: e.image,
                 id: e.id,
                 genres: e.genres.map(e => e.name),
                 rating: e.rating
