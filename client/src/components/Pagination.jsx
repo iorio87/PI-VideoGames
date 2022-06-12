@@ -13,7 +13,7 @@ function Pagination({ gamesPerPage, games, paginado }) {
             <ul>
                 {pageNumbers && pageNumbers.map(number => { 
                     return <li key={number} className='btn-page'>
-                                 <a onClick={() => paginado(number)}>{number}</a>
+                                 <a onClick={() => paginado(number)} href='#/' className='page-link'>{number}</a>
                             </li>
                 })}
             </ul>

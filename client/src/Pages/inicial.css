@@ -16,27 +16,27 @@
     border-radius: 0.4em;
     box-shadow: 0.1em 0.1em;
     margin-top: 2rem;
-   }
-   
-   .btn-inicio:hover {
+}
+
+.btn-inicio:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
     cursor: pointer;
-   }
-   
-   .btn-inicio:active {
+}
+
+.btn-inicio:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
-   }
+}
 
-   @font-face {
-       font-family: 'SuperMario';
-       src: url(../font/SuperMario256.ttf) format('trueType');
-   }
+@font-face {
+    font-family: 'SuperMario';
+    src: url(../font/SuperMario256.ttf) format('trueType');
+}
 
-   .fuente{
-       font-family: 'SuperMario';
-       font-size: 3rem;
-       justify-content: center;
-       color: red;
-   }
+.fuente {
+    font-family: 'SuperMario';
+    font-size: 3rem;
+    justify-content: center;
+    color: red;
+}

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { AddGame, getGenres } from '../store/actions'
+import { AddGame, getGames, getGenres } from '../store/actions'
 import './agregar.css'
 
 export function validate(input) {
@@ -50,11 +50,11 @@ function Agregar() {
     const [errors, setErrors] = useState({})
     const dispatch = useDispatch()
 
-
     useEffect(() => {
         dispatch(getGenres())
-    }, [])
+    }, [dispatch])
 
+    
     function handleChange(e) {
         setInput({
             ...input,
@@ -65,14 +65,23 @@ function Agregar() {
             [e.target.name]: e.target.value
         }));
     }
+
     const selectedGenre = (e) => {
         const opcion = e.target.value
         if (!input.genres.includes(opcion)) setInput({ ...input, genres: [...input.genres, opcion] })
+        setErrors(validate({
+            ...input,
+            [e.target.name]: e.target.value
+        }));
     }
 
     const selectedplatform = (e) => {
         const opcion = e.target.value
         if (!input.platforms.includes(opcion)) setInput({ ...input, platforms: [...input.platforms, opcion] })
+        setErrors(validate({
+            ...input,
+            [e.target.name]: e.target.value
+        }));
     }
 
     const handleDelete = (el) => {
@@ -81,17 +90,24 @@ function Agregar() {
             genres: input.genres.filter(e => e !== el),
             platforms: input.platforms.filter(e => e !== el)
         })
+        console.log(input.genres);
+     
+        if (input.genres.length < 2)  setErrors({...errors, genres: 'Debe seleccionar al menos 1 genero!'}) 
+
+        if (input.platforms.length < 2)  setErrors({...errors, platforms: 'Debe seleccionar al menos 1 plataforma!'})    
     }
+    
 
     const handleSubmit = (e) => { 
         e.preventDefault()      
         dispatch(AddGame(input))
+        dispatch(getGames())
         alert('Juego agregado con exito!')
         navigate('/home')
     }
 
     return (
-        <div className='agregar-container'>
+        <div className='agregar-container'>            
 
             <form onSubmit={e => handleSubmit(e)} className='agregar-form'>
                 <h1 className='agregar-h1'>DATOS DEL JUEGO:</h1>
@@ -145,14 +161,14 @@ function Agregar() {
                         <p className="danger">{errors.genres}</p>
                     )}
                 </div>
-
+                        
                 {input.genres.length ?
                     <div>
                         <span className='agregar-span'>Seleccionados:</span>  {input.genres.map(e => {
-                            return (<>
-                                <p className='agregar-list' key={e}>{e}</p>
+                            return (<Fragment key={e}>
+                                <p className='agregar-list'>{e}</p>
                                 <button onClick={() => handleDelete(e)} className='btn-del' >X</button>
-                            </>)
+                            </Fragment>)
                         }
                         )}
                     </div> : null
@@ -181,17 +197,17 @@ function Agregar() {
                     <div>
                         <span className='agregar-span'>Seleccionadas:</span> {input.platforms.map(e => {
                             return (
-                                <>
-                                    <p className='agregar-list' key={e}>{e} </p>
+                                <Fragment key={e}>
+                                    <p className='agregar-list'>{e} </p>
                                     <button onClick={() => handleDelete(e)} className='btn-del'>X</button>
-                                </>
+                                </Fragment>
                             )
                         }
                         )}
                     </div> : null
                 }
 
-                <button className='agregar-btn' type='submit' >AGREGAR</button>
+                <button className='agregar-btn' type='submit' disabled={Object.keys(errors).length !== 0}>AGREGAR</button>
             </form>
         </div>
     )

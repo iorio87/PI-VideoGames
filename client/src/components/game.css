@@ -1,50 +1,43 @@
-/* .card{
-    border: 1px solid black;
-    border-radius: 10px;
-    background: #f8f9fa;
-    box-shadow: 2px 2px 5px gray;
-} */
-
-img{
-    border-radius: 50%;
+img {
+  border-radius: 50%;
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
 .card {
-    width: 310px;
-    height: 400px;
-    background: black;
-    border: 2px solid #07ff07;
-    border-radius: 10px;
-    box-shadow: 2px 2px 15px #000000;
-    text-align: center;
-    color: #e8e8e8;    
-    font-family: 'Pacifico';    
-  }
-  
-  .card:hover {
-    color: #07ff07;
-    box-shadow: 2px 2px 15px #07ff07 inset;
-  }
+  width: 310px;
+  height: 400px;
+  background: black;
+  border: 2px solid #07ff07;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px #000000;
+  text-align: center;
+  color: #e8e8e8;
+  font-family: 'Pacifico';
+}
 
-  .titulo{
-    font-size: 20px;
-  }
+.card:hover {
+  color: #07ff07;
+  box-shadow: 2px 2px 15px #07ff07 inset;
+}
 
-  .genero{
-    margin: 5px;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 13px;
-  }
+.titulo {
+  font-size: 20px;
+}
 
-  .rating{
-    padding-top: 12px;
-   padding-left: 190px;
-   overflow: hidden;
-   font-weight: bold;
-   font-size: 13px;    
-  }
+.genero {
+  margin: 5px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.rating {
+  padding-top: 12px;
+  padding-left: 190px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 13px;
+}

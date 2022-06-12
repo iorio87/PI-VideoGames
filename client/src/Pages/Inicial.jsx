@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './inicial.css';
 
-
 function Inicial() {
     const navigate = useNavigate()
     return (

@@ -5,44 +5,56 @@ const axios = require('axios');
 const { Op } = require('sequelize');
 
 const getApiGames = async () => {
-    let API = `https://api.rawg.io/api/games?key=${API_KEY}&page_size=34`
-    const games = []
-    for (i = 0; i < 3; i++) {
-        const response = await axios.get(API)
-        response.data.results.map(e => {
-            return games.push({
+
+    try {
+        let API = `https://api.rawg.io/api/games?key=${API_KEY}&page_size=34`
+        const games = []
+        for (i = 0; i < 3; i++) {
+            const response = await axios.get(API)
+            response.data.results.map(e => {
+                return games.push({
+                    id: e.id,
+                    name: e.name,
+                    released: e.released,
+                    rating: e.rating,
+                    image: e.background_image,
+                    platforms: e.platforms.map(e => e.platform.name),
+                    genres: e.genres.map(e => e.name)
+                })
+            })
+            API = response.data.next
+        }
+
+        return games
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+const getDBGames = async () => {
+
+    try {
+        const DBgames = await Videogame.findAll({
+            include: Genre
+        })
+        games = DBgames.map(e => {
+            return {
                 id: e.id,
                 name: e.name,
                 released: e.released,
                 rating: e.rating,
-                image: e.background_image,
-                platforms: e.platforms.map(e => e.platform.name),
-                genres: e.genres.map(e => e.name)
-            })
+                image: e.image,
+                platforms: e.platforms,
+                genres: e.genres.map(e => e.name),
+                created: e.createdAt
+            }
         })
-       API = response.data.next 
+        return games
+    } catch (error) {
+        console.log(error)
     }
 
-    return games
-}
-
-const getDBGames = async () => {
-    const DBgames = await Videogame.findAll({
-        include: Genre
-    })
-    games = DBgames.map(e => {
-        return {
-            id: e.id,
-            name: e.name,
-            released: e.released,
-            rating: e.rating,
-            image: e.image,
-            platforms: e.platforms,
-            genres: e.genres.map(e => e.name),
-            created: e.createdAt
-        }
-    })
-    return games
 }
 
 const getAllgames = async () => {
@@ -58,7 +70,7 @@ const getGameById = async (id) => {
 
     try {
         if (typeof id === 'string' && id.length > 10) {
-            const g = await Videogame.findByPk(id, {include: Genre })
+            const g = await Videogame.findByPk(id, { include: Genre })
             game = {
                 name: g.name,
                 image: g.image,
@@ -93,26 +105,37 @@ const getGameById = async (id) => {
 }
 
 const getGameByName = async (name) => {
-    const response = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=15&search=${name}`)
-    //const filterGames = games.filter(e => e.name.toLowerCase().includes(name.toLowerCase()))    
-    const APIgames = await response.data.results
-    const DBGames = await Videogame.findAll({
-        include: Genre,
-        where: {
-            name: {
-                [Op.iLike]: "%" + name + "%"
+
+    try {
+        const response = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=15&search=${name}`)
+        const APIgames = await response.data.results
+        const DBGames = await Videogame.findAll({
+            include: Genre,
+            where: {
+                name: {
+                    [Op.iLike]: "%" + name + "%"
+                }
             }
-        }
-    })
-    const games = [...DBGames, ...APIgames]
-    return games
-    // return games.slice(0, 15) //lo limito a 15 resultados
+        })
+        const games = [...DBGames, ...APIgames]
+        return games
+        // return games.slice(0, 15) //lo limito a 15 resultados
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 const getGenres = async () => {
-    const response = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
-    const genres = response.data.results.map(e =>  e.name )
-    return genres
+
+    try {
+        const response = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
+        const genres = response.data.results.map(e => e.name)
+        return genres
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 module.exports = { getAllgames, getGameById, getGameByName, getGenres };

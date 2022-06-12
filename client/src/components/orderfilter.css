@@ -5,9 +5,8 @@ label{
 .select {
     background: black;
     border: 2px solid #07ff07;
-    color: white;
-    padding: 5px;
-    margin-top: 5px;
+    color: white;      
+    display: inline-flex;
 }
 
 option{
@@ -15,4 +14,8 @@ option{
     color: white;
     border: none;
     border: 5px solid rebeccapurple;
+}
+
+.filter{
+    padding: 5px 20px;
 }

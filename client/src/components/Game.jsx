@@ -13,8 +13,7 @@ function Game({ name, image, id, genres, rating }) {
        {genres.map(e => <li key={e} className='genero'>{e} </li> )}
         <p className='rating'>Rating: {rating}</p>
         </div >
-      </NavLink>
-    
+      </NavLink>    
   )
 }
 

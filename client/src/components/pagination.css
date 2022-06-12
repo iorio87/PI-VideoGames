@@ -5,10 +5,16 @@
     background: black;
     border: 2px solid #07ff07;
     border-radius: 5px;
-    color: white;
+    
+    
 }
 
 .btn-page:hover {
     color: #07ff07;
     box-shadow: 2px 2px 5px #07ff07 inset;
   }
+
+.page-link{
+    text-decoration: none;
+    color: white;
+}

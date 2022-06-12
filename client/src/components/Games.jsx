@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 import { getGames } from '../store/actions/index'
 import Game from './Game'
 import './games.css'
@@ -13,25 +12,30 @@ function Games() {
 
   // Paginado 
   const [currentPage, setCurrentPage] = useState(1)
-  const [gamesPerPage, setGamesPerPage] = useState(15)
+  const gamesPerPage= 15
   const LastGameForPage = currentPage * gamesPerPage
   const FirtGameForPage = LastGameForPage - gamesPerPage
   const currentGames = games.slice(FirtGameForPage, LastGameForPage)
 
-  const paginado = (pageNumber) => {
+  const paginado = (pageNumber) => {    
     return setCurrentPage(pageNumber)
   }
-
-  //console.log('la pagina actual es: ' + currentPage);
-
-  useEffect(() => {
-    dispatch(getGames())
-
-  }, [])
-
   
+  useEffect(() => {
+    if (games.length === 0){
+      dispatch(getGames())
+    }else{
+      return games
+    }    
 
-  return (
+  }, [games, dispatch])
+
+  //vuelvo a la pagina 1, cada vez que filtro
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [games])  
+
+  return (    
     <div>      
       <div className='pagination'>        
         <Pagination gamesPerPage={gamesPerPage} games={games.length} paginado={paginado} />

@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/add.jpg);
-    background-size: cover;
+    background-image: url(../img/agregar.jpg);
+    background-size: 50%;
     background-attachment: fixed;
     min-height: 100vh;
 
@@ -93,4 +93,8 @@ textarea {
     margin: 0;
     cursor: pointer;
     margin-left: 1px;
+}
+
+button:disabled{
+    background: grey;
 }
