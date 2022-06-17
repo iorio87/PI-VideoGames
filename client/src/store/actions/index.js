@@ -74,8 +74,7 @@ export function Order(order) {
 export function AddGame (game){
   return function (dispatch) {    
     axios.post('http://localhost:3001/videogame', game)
-      .then(response => {
-          console.log(response)
+      .then(response => {          
           return response
       })
       .catch(err => {

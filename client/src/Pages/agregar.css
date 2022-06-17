@@ -84,6 +84,7 @@ textarea {
     color: red;
     margin: 0;
     font-size: 12px;
+    margin-left: 60px;
 }
 
 .btn-del {

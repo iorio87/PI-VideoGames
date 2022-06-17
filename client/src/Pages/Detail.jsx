@@ -29,7 +29,7 @@ function Detail() {
                 <button onClick={() => navigate(-1)} className='btn-detail'>Home</button>
                     <div className='detail'>
                         <h1>{game.name}</h1>
-                        <img src={game.image} alt="" width={300} height={300} />
+                        <img src={game.image? game.image: 'https://www.collinsdictionary.com/images/full/videogame_634861250_1000.jpg'} alt="" width={300} height={300} />
                         <p className='descripcion'> <span className='detail-span'>Descripcion: </span>  {game.description.replace(/(<([^>]+)>)/ig, '')}</p>
                         <p> <span className='detail-span'>Generos: </span>  {game.genres.map(e => <li key={e} className='detail-list'>{e}</li> )}</p>                        
                         <p> <span className='detail-span'>Fecha de Lanzamiento: </span>  {game.released}</p>

@@ -14,7 +14,7 @@ export function validate(input) {
         errors.rating = 'Rating requerido!'
     } else if (input.rating < 1 || input.rating > 5) {
         errors.rating = 'Rating debe ser un valor entre 1 y 5!'
-    }
+    } 
 
     if (!input.released) {
         errors.released = 'Fecha de lanzamiento requerida!'
@@ -99,11 +99,17 @@ function Agregar() {
     
 
     const handleSubmit = (e) => { 
-        e.preventDefault()      
-        dispatch(AddGame(input))
-        dispatch(getGames())
-        alert('Juego agregado con exito!')
-        navigate('/home')
+        e.preventDefault()
+        if(input.name !== '' ) {
+
+            dispatch(AddGame(input))
+            dispatch(getGames())
+            alert('Juego agregado con exito!')
+            navigate('/home')
+        }  else{
+            alert('No puede enviar el formulario vacio!')
+        }
+
     }
 
     return (
@@ -113,7 +119,7 @@ function Agregar() {
                 <h1 className='agregar-h1'>DATOS DEL JUEGO:</h1>
                 <div className='agregar-div'>
                     <label htmlFor="nombre" className='agregar-label'>Nombre: </label>
-                    <input type="text" id='nombre' name='name' className='agregar-input' value={input.name} onChange={handleChange} />
+                    <input type="text" id='nombre' name='name' className='agregar-input' value={input.name ? input.name : ' '} onChange={handleChange} />
                     {errors.name && (
                         <p className="danger">{errors.name}</p>
                     )}
@@ -121,7 +127,7 @@ function Agregar() {
 
                 <div className='agregar-div'>
                     <label htmlFor="rating" className='agregar-label'>Rating: </label>
-                    <input type="text" id="rating" name='rating' className='agregar-input' value={input.rating} onChange={handleChange} />
+                    <input type="number" id="rating" name='rating' className='agregar-input' value={input.rating} onChange={handleChange} />
                     {errors.rating && (
                         <p className="danger">{errors.rating}</p>
                     )}
