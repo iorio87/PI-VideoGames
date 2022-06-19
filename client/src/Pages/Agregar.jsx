@@ -24,7 +24,7 @@ export function validate(input) {
         errors.description = 'Descripcion requerida!'
     }
 
-    if (!input.genres.length) {
+    if (!input.genres.length || input.genres.length < 1) {
         errors.genres = 'Debe seleccionar al menos 1 genero!'
     }
 
@@ -84,16 +84,20 @@ function Agregar() {
         }));
     }
 
-    const handleDelete = (el) => {
+    const handleDeleteGenre = (el) => {
         setInput({
             ...input,
-            genres: input.genres.filter(e => e !== el),
+            genres: input.genres.filter(e => e !== el)            
+        })              
+     
+        if (input.genres.length < 2)  setErrors({...errors, genres: 'Debe seleccionar al menos 1 genero!'})    
+    }
+
+    const handleDeletePlatform = (el) => {
+        setInput({
+            ...input,            
             platforms: input.platforms.filter(e => e !== el)
         })
-        console.log(input.genres);
-     
-        if (input.genres.length < 2)  setErrors({...errors, genres: 'Debe seleccionar al menos 1 genero!'}) 
-
         if (input.platforms.length < 2)  setErrors({...errors, platforms: 'Debe seleccionar al menos 1 plataforma!'})    
     }
     
@@ -119,7 +123,7 @@ function Agregar() {
                 <h1 className='agregar-h1'>DATOS DEL JUEGO:</h1>
                 <div className='agregar-div'>
                     <label htmlFor="nombre" className='agregar-label'>Nombre: </label>
-                    <input type="text" id='nombre' name='name' className='agregar-input' value={input.name ? input.name : ' '} onChange={handleChange} />
+                    <input type="text" id='nombre' name='name' className='agregar-input' value={input.name} onChange={handleChange} />
                     {errors.name && (
                         <p className="danger">{errors.name}</p>
                     )}
@@ -157,7 +161,7 @@ function Agregar() {
                 <div className='agregar-div'>
                     <label htmlFor="genres" className='agregar-label'>Generos:</label>
                     <select name="genres" onChange={e => selectedGenre(e)}>
-                        <option value="-">Seleccionar</option>
+                        <option selected disabled >Seleccionar</option>
                         {/* Me traigo los generos del back y los inyecto */}
                         {genres.map(genre => {
                             return <option value={genre.name} key={genre.id}>{genre.name}</option>
@@ -173,7 +177,7 @@ function Agregar() {
                         <span className='agregar-span'>Seleccionados:</span>  {input.genres.map(e => {
                             return (<Fragment key={e}>
                                 <p className='agregar-list'>{e}</p>
-                                <button onClick={() => handleDelete(e)} className='btn-del' >X</button>
+                                <button onClick={() => handleDeleteGenre(e)} className='btn-del' >X</button>
                             </Fragment>)
                         }
                         )}
@@ -184,7 +188,7 @@ function Agregar() {
                 <div className='agregar-div'>
                     <label htmlFor="platforms" className='agregar-label'>Plataformas:</label>
                     <select name="platforms" onChange={e => selectedplatform(e)}>
-                        <option value="-">Seleccionar</option>
+                        <option selected disabled>Seleccionar</option>
                         <option value="Playstation 3">Playstation 3</option>
                         <option value="Playstation 4">Playstation 4</option>
                         <option value="Playstation 5">Playstation 5</option>
@@ -205,7 +209,7 @@ function Agregar() {
                             return (
                                 <Fragment key={e}>
                                     <p className='agregar-list'>{e} </p>
-                                    <button onClick={() => handleDelete(e)} className='btn-del'>X</button>
+                                    <button onClick={() => handleDeletePlatform(e)} className='btn-del'>X</button>
                                 </Fragment>
                             )
                         }

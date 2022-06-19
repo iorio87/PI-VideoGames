@@ -47,7 +47,7 @@ export function reducer(state = initialState, action) {
   if (action.type === FILTER_BY_GENRE) {
     const games = state.tofiltergames
 
-    const filter = games.filter(e => {
+    const filter = games.filter(e => {      
       return e.genres.some(g => g === action.payload)
     })
 
