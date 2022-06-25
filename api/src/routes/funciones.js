@@ -24,8 +24,8 @@ const getApiGames = async () => {
             })
             API = response.data.next
         }
-
         return games
+
     } catch (error) {
         console.log(error)
     }
@@ -38,7 +38,7 @@ const getDBGames = async () => {
         const DBgames = await Videogame.findAll({
             include: Genre
         })
-        games = DBgames.map(e => {
+        const games = DBgames.map(e => {
             return {
                 id: e.id,
                 name: e.name,
@@ -55,6 +55,29 @@ const getDBGames = async () => {
         console.log(error)
     }
 
+
+    // const DBgames = Videogame.findAll({
+    //     include: Genre
+    // }).then((response) =>{
+    //     return response
+    // })
+
+    // console.log(DBgames)
+        
+
+    // const games = DBgames.map(e => {
+    //     return {
+    //         id: e.id,
+    //         name: e.name,
+    //         released: e.released,
+    //         rating: e.rating,
+    //         image: e.image,
+    //         platforms: e.platforms,
+    //         genres: e.genres.map(e => e.name),
+    //         created: e.createdAt
+    //     }
+    // })
+    // return games
 }
 
 const getAllgames = async () => {

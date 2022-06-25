@@ -160,7 +160,7 @@ function Agregar() {
 
                 <div className='agregar-div'>
                     <label htmlFor="genres" className='agregar-label'>Generos:</label>
-                    <select name="genres" onChange={e => selectedGenre(e)}>
+                    <select name="genres" id='genres' onChange={e => selectedGenre(e)}>
                         <option selected disabled >Seleccionar</option>
                         {/* Me traigo los generos del back y los inyecto */}
                         {genres.map(genre => {
@@ -187,7 +187,7 @@ function Agregar() {
 
                 <div className='agregar-div'>
                     <label htmlFor="platforms" className='agregar-label'>Plataformas:</label>
-                    <select name="platforms" onChange={e => selectedplatform(e)}>
+                    <select name="platforms" id='platforms' onChange={e => selectedplatform(e)}>
                         <option selected disabled>Seleccionar</option>
                         <option value="Playstation 3">Playstation 3</option>
                         <option value="Playstation 4">Playstation 4</option>
