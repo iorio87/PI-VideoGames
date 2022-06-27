@@ -32,7 +32,8 @@ export function searchGames(name) {
         dispatch({ type: HIDE_LOADER })
       })
       .catch(err => {
-        console.log(err)
+        dispatch({ type: HIDE_LOADER })
+        alert(err.response.data)       
       })
   }
 }

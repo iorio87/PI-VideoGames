@@ -4,16 +4,16 @@ import './game.css'
 
 function Game({ name, image, id, genres, rating }) {
   return (
-    
-      <NavLink to={`detail/${id}`} className='link'>
-        <div className='card'>
+
+    <NavLink to={`detail/${id}`} className='link'>
+      <div className='card'>
         <h2 className='titulo'> {name} </h2>
-        <img src={image ? image: 'https://thumbs.dreamstime.com/b/video-game-controller-6048794.jpg'} alt="" width={200} height={200} />
+        <img src={image ? image : 'https://thumbs.dreamstime.com/b/video-game-controller-6048794.jpg'} alt="" width={200} height={200} />
         <p className='genero'>Generos:</p>
-       {genres.map(e => <li key={e} className='genero'>{e} </li> )}
+        {genres.map(e => <li key={e} className='genero'>{e} </li>)}
         <p className='rating'>Rating: {rating}</p>
-        </div >
-      </NavLink>    
+      </div >
+    </NavLink>
   )
 }
 

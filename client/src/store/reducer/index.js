@@ -16,11 +16,14 @@ export function reducer(state = initialState, action) {
     }
   }
 
-  if (action.type === SEARCH_GAMES) {
+  if (action.type === SEARCH_GAMES) {   
+
     return {
       ...state,
       games: action.payload.data
     }
+
+
   }
 
   if (action.type === GET_GENRES) {
@@ -47,7 +50,7 @@ export function reducer(state = initialState, action) {
   if (action.type === FILTER_BY_GENRE) {
     const games = state.tofiltergames
 
-    const filter = games.filter(e => {      
+    const filter = games.filter(e => {
       return e.genres.some(g => g === action.payload)
     })
 

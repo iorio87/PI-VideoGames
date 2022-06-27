@@ -50,39 +50,35 @@ const getDBGames = async () => {
                 created: e.createdAt
             }
         })
+        console.log(games)
         return games
     } catch (error) {
         console.log(error)
     }
 
-
-    // const DBgames = Videogame.findAll({
-    //     include: Genre
-    // }).then((response) =>{
-    //     return response
-    // })
-
-    // console.log(DBgames)
+    // const DBgames = Videogame.findAll({include: Genre}).then(games => {
+    //     const juegos = games.map(e => {
+    //         return {
+    //             id: e.id,
+    //             name: e.name,
+    //             released: e.released,
+    //             rating: e.rating,
+    //             image: e.image,
+    //             platforms: e.platforms,
+    //             genres: e.genres.map(e => e.name),
+    //             created: e.createdAt
+    //         }
+    //     })     
         
+    //     return juegos
+    // }).catch(error => console.log(error))    
 
-    // const games = DBgames.map(e => {
-    //     return {
-    //         id: e.id,
-    //         name: e.name,
-    //         released: e.released,
-    //         rating: e.rating,
-    //         image: e.image,
-    //         platforms: e.platforms,
-    //         genres: e.genres.map(e => e.name),
-    //         created: e.createdAt
-    //     }
-    // })
-    // return games
+    // return DBgames
 }
 
 const getAllgames = async () => {
     const apiGames = await getApiGames()
-    const dbGames = await getDBGames()
+    const dbGames = await getDBGames()    
     const allGames = [...apiGames, ...dbGames]
 
     return allGames

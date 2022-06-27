@@ -24,7 +24,7 @@ export function validate(input) {
         errors.description = 'Descripcion requerida!'
     }
 
-    if (!input.genres.length || input.genres.length < 1) {
+    if (!input.genres.length) {
         errors.genres = 'Debe seleccionar al menos 1 genero!'
     }
 
@@ -121,6 +121,7 @@ function Agregar() {
 
             <form onSubmit={e => handleSubmit(e)} className='agregar-form'>
                 <h1 className='agregar-h1'>DATOS DEL JUEGO:</h1>
+                
                 <div className='agregar-div'>
                     <label htmlFor="nombre" className='agregar-label'>Nombre: </label>
                     <input type="text" id='nombre' name='name' className='agregar-input' value={input.name} onChange={handleChange} />
