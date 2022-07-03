@@ -11,10 +11,10 @@ function Home() {
   
 
   return (
-    <div className='bg size'>
+    <div className='bg'>
       
       <Header />
-      <div className="container">
+      <div>
         
         <div>
           <OrderFilter/>          

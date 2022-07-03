@@ -26,7 +26,7 @@ describe('Formulario Agregar Juego', () => {
     const labelGenero = component.getByLabelText(/Generos:/i)
     const labelPlataforma = component.getByLabelText(/Plataformas:/i)
     const boton = component.getByRole('button')
-    console.log(prettyDOM(boton))    
+       
     
    
     it('Debe rendizar un formulario', ()=>{

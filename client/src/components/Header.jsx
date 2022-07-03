@@ -5,6 +5,7 @@ import { searchGames } from '../store/actions'
 import './header.css'
 
 
+
 function Header() {
     const [search, setSearch] = useState('')
     const dispatch = useDispatch()

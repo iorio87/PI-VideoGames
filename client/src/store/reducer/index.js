@@ -100,11 +100,11 @@ export function reducer(state = initialState, action) {
     }
   }
 
-  if (action.type === ADD_GAME) {
-    return {
-      ...state,
-    }
-  }
+  // if (action.type === ADD_GAME) {
+  //   return {
+  //     ...state,
+  //   }
+  // }
 
   return state
 }
