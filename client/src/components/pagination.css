@@ -3,15 +3,15 @@
     padding: 6px 3px;  
     cursor: pointer;
     background: black;
-    border: 2px solid #07ff07;
+    border: 2px solid #fdff00;
     border-radius: 5px;
-    
+    display: inline;        
     
 }
 
 .btn-page:hover {
-    color: #07ff07;
-    box-shadow: 2px 2px 5px #07ff07 inset;
+    color: #fdff00;
+    box-shadow: 2px 2px 5px #fdff00 inset;
   }
 
 .page-link{

@@ -1,11 +1,14 @@
 import React from 'react'
 import './loader.css'
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 function Loader() {
   return (
     <div className="loader-container">
 
-      <div className='lds-dual-ring posicion'></div>
+      <PacmanLoader color={'#fdff00'} loading={true} size={50} />
+
+      {/* <div className='lds-dual-ring posicion'></div> */}
     </div>
   )
 }

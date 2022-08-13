@@ -19,10 +19,10 @@ function Home() {
         <div>
           <OrderFilter/>          
         </div>
-        <div>
+        <div className='loader'>
 
-          {loading && <Loader/>}
           <Games />
+          {loading && <Loader/>}
         </div>
         
 
