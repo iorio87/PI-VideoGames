@@ -60,7 +60,7 @@
 	
 }
 
-#container .product-details h1:before{
+/* #container .product-details h1:before{
 	position: absolute;
 	content: '';
 	right: 0%; 
@@ -76,22 +76,13 @@
 	margin: 0;
 	animation: chan-sh 6s ease infinite;
 
-}
+} */
 
-
-@keyframes chan-sh {
+/* @keyframes chan-sh {
 	from  {content: 'free shipping';}
 	to  {content: 'New';}
 	
-}
-
-/*Product Rating  */
-.hint-star {
-	display: inline-block;
-	margin-left: 0.5em;
-	color: gold;
-	width: 50%;
-}
+} */
 
 
 /* The most important information about the product */

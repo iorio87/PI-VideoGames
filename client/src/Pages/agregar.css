@@ -6,11 +6,11 @@
     background-size: 50%;
     background-attachment: fixed;
     min-height: 100vh;
-
 }
 
 .agregar-h1 {
-    margin: 0;
+    margin: 20px;
+    font-size: 20px;
 }
 
 .agregar-form {
@@ -35,6 +35,7 @@
     width: 350px;
     border: 2px solid #ff0303;
     color: black;
+    padding: 5px;
 }
 
 .agregar-input:focus {
@@ -46,6 +47,7 @@
 .agregar-label {
     width: 200px;
     display: inline-block;
+    font-size: 14px;
 }
 
 textarea {
@@ -95,6 +97,10 @@ textarea {
     margin-left: 1px;
 }
 
-button:disabled{
-    background: grey;
+button:disabled{    
+    visibility: hidden;
+}
+
+.btn-position{
+    margin-top: 40px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getGenres, FilterByGenre, FilterSource, Order } from '../store/actions/index'
 import './orderfilter.css'
+import './buttons.css'
 
 function OrderFilter() {
   const { genres } = useSelector(state => state)
@@ -41,7 +42,7 @@ function OrderFilter() {
       </div>
 
       <div className='filter'>
-        <label htmlFor="genero">GENERO:</label>
+        <label htmlFor="genero font">GENERO:</label>
         <select name="genero" onChange={e => HandleFIlterByGenre(e)}>
           <option value="todos">Todos</option>
           {/* Me traigo los generos del back y los inyecto */}

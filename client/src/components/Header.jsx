@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <div className="header-container">
-      <NavLink to={"/agregar"} className="agregar">
+      <NavLink to={"/agregar"} className="eightbit-btn--proceed font">
         <FaGamepad className="fagame"/>
         Agregar Juego
       </NavLink>
@@ -32,13 +32,13 @@ function Header() {
         }}
       >
         <input
-          className="buscar"
+          className="buscar font"
           type="text"
           placeholder="Buscar juego..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <input className="btn-buscar" type="submit" value="Buscar" />
+        <input className="btn-buscar font" type="submit" value="Buscar" />
       </form>
     </div>
   );

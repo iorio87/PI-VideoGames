@@ -121,52 +121,52 @@ function Agregar() {
         <div className='agregar-container'>            
 
             <form onSubmit={e => handleSubmit(e)} className='agregar-form'>
-                <h1 className='agregar-h1'>DATOS DEL JUEGO:</h1>
+                <h1 className='agregar-h1 font'>DATOS DEL JUEGO:</h1>
                 
                 <div className='agregar-div'>
-                    <label htmlFor="nombre" className='agregar-label'>Nombre: </label>
-                    <input type="text" id='nombre' name='name' className='agregar-input' value={input.name} onChange={handleChange} />
+                    <label htmlFor="nombre" className='agregar-label font'>Nombre: </label>
+                    <input type="text" id='nombre' name='name' className='agregar-input font' value={input.name} onChange={handleChange} />
                     {errors.name && (
                         <p className="danger">{errors.name}</p>
                     )}
                 </div>
 
                 <div className='agregar-div'>
-                    <label htmlFor="rating" className='agregar-label'>Rating: </label>
-                    <input type="number" id="rating" name='rating' className='agregar-input' value={input.rating} onChange={handleChange} />
+                    <label htmlFor="rating" className='agregar-label font'>Rating: </label>
+                    <input type="number" id="rating" name='rating' className='agregar-input font' value={input.rating} onChange={handleChange} />
                     {errors.rating && (
                         <p className="danger">{errors.rating}</p>
                     )}
                 </div>
 
                 <div className='agregar-div'>
-                    <label htmlFor="released" className='agregar-label'>Fecha de Lanzamiento: </label>
-                    <input type="date" id="released" name='released' className='agregar-input' value={input.released} onChange={handleChange} />
+                    <label htmlFor="released" className='agregar-label font'>Fecha de Lanzamiento: </label>
+                    <input type="date" id="released" name='released' className='agregar-input font' value={input.released} onChange={handleChange} />
                     {errors.released && (
                         <p className="danger">{errors.released}</p>
                     )}
                 </div>
 
                 <div className='agregar-div'>
-                    <label htmlFor="image" className='agregar-label'>Imagen: </label>
-                    <input type="text" id="image" name='image' className='agregar-input' value={input.image} onChange={handleChange} />
+                    <label htmlFor="image" className='agregar-label font'>Imagen: </label>
+                    <input type="text" id="image" name='image' className='agregar-input font' value={input.image} onChange={handleChange} />
                 </div>
 
                 <div className='agregar-div agregar-descripcion'>
-                    <label htmlFor="description" className='agregar-label'>Descripcion: </label>
-                    <textarea id="description" name='description' cols="30" rows="3" className='agregar-input' value={input.description} onChange={handleChange}></textarea>
+                    <label htmlFor="description" className='agregar-label font'>Descripcion: </label>
+                    <textarea id="description" name='description' cols="30" rows="3" className='agregar-input font' value={input.description} onChange={handleChange}></textarea>
                     {errors.description && (
                         <p className="danger">{errors.description}</p>
                     )}
                 </div>
 
                 <div className='agregar-div'>
-                    <label htmlFor="genres" className='agregar-label'>Generos:</label>
-                    <select name="genres" id='genres' onChange={e => selectedGenre(e)}>
-                        <option selected disabled >Seleccionar</option>
+                    <label htmlFor="genres" className='agregar-label font'>Generos:</label>
+                    <select className='font' name="genres" id='genres' onChange={e => selectedGenre(e)}>
+                        <option selected disabled className='font'>Seleccionar</option>
                         {/* Me traigo los generos del back y los inyecto */}
                         {genres.map(genre => {
-                            return <option value={genre.name} key={genre.id}>{genre.name}</option>
+                            return <option className='font' value={genre.name} key={genre.id}>{genre.name}</option>
                         })}
                     </select>
                     {errors.genres && (
@@ -188,17 +188,17 @@ function Agregar() {
 
 
                 <div className='agregar-div'>
-                    <label htmlFor="platforms" className='agregar-label'>Plataformas:</label>
-                    <select name="platforms" id='platforms' onChange={e => selectedplatform(e)}>
-                        <option selected disabled>Seleccionar</option>
-                        <option value="Playstation 3">Playstation 3</option>
-                        <option value="Playstation 4">Playstation 4</option>
-                        <option value="Playstation 5">Playstation 5</option>
-                        <option value="X box 360">X box 360</option>
-                        <option value="X box One">X box One</option>
-                        <option value="X box Series S">X box Series S</option>
-                        <option value="Nintendo Switch">Nintendo Switch</option>
-                        <option value="PC">PC</option>
+                    <label htmlFor="platforms" className='agregar-label font'>Plataformas:</label>
+                    <select className='font' name="platforms" id='platforms' onChange={e => selectedplatform(e)}>
+                        <option selected disabled className='font'>Seleccionar</option>
+                        <option className='font' value="Playstation 3">Playstation 3</option>
+                        <option className='font' value="Playstation 4">Playstation 4</option>
+                        <option className='font' value="Playstation 5">Playstation 5</option>
+                        <option className='font' value="X box 360">X box 360</option>
+                        <option className='font' value="X box One">X box One</option>
+                        <option className='font' value="X box Series S">X box Series S</option>
+                        <option className='font' value="Nintendo Switch">Nintendo Switch</option>
+                        <option className='font' value="PC">PC</option>
                     </select>
                     {errors.platforms && (
                         <p className="danger">{errors.platforms}</p>
@@ -219,7 +219,7 @@ function Agregar() {
                     </div> : null
                 }
 
-                <button className='agregar-btn' type='submit' disabled={Object.keys(errors).length !== 0}>AGREGAR</button>
+                <button className='eightbit-btn font btn-position' type='submit' disabled={Object.keys(errors).length !== 0}>AGREGAR</button>
             </form>
         </div>
     )

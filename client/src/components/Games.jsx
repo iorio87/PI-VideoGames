@@ -37,7 +37,7 @@ function Games() {
 
   return (    
     <div>      
-      <div className='pagination'>        
+      <div className='pagination font'>        
         <Pagination gamesPerPage={gamesPerPage} games={games.length} paginado={paginado} />
       </div>
       <div className='contenedor'>

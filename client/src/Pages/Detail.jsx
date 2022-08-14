@@ -43,8 +43,11 @@ function Detail() {
     // otro detalle
     <div className="detail-container">
       {loading && <Loader className="loader" />}
-      {game && (
-        <div id="container">
+      
+      {game && (   
+        <div>     
+        <button className="eightbit-btn--reset font" navigate={'/'}>volver</button>
+        <div id="container">          
           <>
             <div class="product-details">
               <h1>{game.name}</h1>              
@@ -67,7 +70,7 @@ function Detail() {
               />
 
               <div className="detail-info">
-                <h2>The Description</h2>
+                <h2>Informacion:</h2>
                 <ul>
                   <li>
                     <strong>Fecha de Lanzamiento: </strong>{game.released}
@@ -87,8 +90,10 @@ function Detail() {
             </div>
           </>
         </div>
+        </div>
       )}
-    </div>
+      </div>
+    
   );
 }
 
