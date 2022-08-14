@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { AddGame, getGames, getGenres } from '../store/actions'
 import './agregar.css'
+import '../components/buttons.css'
 
 export function validate(input) {
     let errors = {};

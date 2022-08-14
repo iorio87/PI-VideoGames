@@ -79,14 +79,9 @@ function Detail() {
                     <strong>ID: </strong>{id}
                   </li>
                   <li>
-                    <strong>Height: </strong>2 - 3 feet
+                    <strong>Plataformas: </strong>{game.platforms.map(e => <p key={e} className='plataformas'>{e} -</p> )}
                   </li>
-                  <li>
-                    <strong>Blooms in: </strong>Mid‑Summer - Mid‑Fall
-                  </li>
-                  <li>
-                    <strong>Features: </strong>Tolerates heat
-                  </li>
+                 
                 </ul>
               </div>
             </div>
