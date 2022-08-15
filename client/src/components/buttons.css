@@ -43,9 +43,8 @@
     box-shadow: inset -4px -4px 0px 0px #8c2022;
     color: white;
     text-decoration: none;
-    font-size: 12px;
-    padding: 12px;
-    margin: 5px;
+    font-size: 20px;
+    padding: 15px;    
   }
   .eightbit-btn--reset:hover, .eightbit-btn--reset:focus {
     background: #ce372b;
@@ -53,6 +52,20 @@
   }
   .eightbit-btn--reset:active {
     box-shadow: inset 4px 4px 0px 0px #8c2022;
+  }
+  
+
+  .eightbit-btn--reset:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px #6c757d solid;
+    border-bottom: 6px #6c757d solid;
+  }
+  .eightbit-btn--reset:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px #6c757d solid;
+    border-right: 6px #6c757d solid;
   }
 
 

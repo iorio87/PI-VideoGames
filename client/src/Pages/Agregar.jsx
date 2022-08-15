@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { AddGame, getGames, getGenres } from '../store/actions'
+import { toast } from 'react-toastify';
 import './agregar.css'
 import '../components/buttons.css'
 
@@ -108,11 +109,11 @@ function Agregar() {
         if(input.name !== '' ) {
 
             dispatch(AddGame(input))
-            dispatch(getGames())
-            alert('Juego agregado con exito!')
+            dispatch(getGames())            
+            toast.success('Juego agregado con exito!')
             navigate('/home')
         }  else{
-            alert('No puede enviar el formulario vacio!')
+            toast.error('No puede enviar el formulario vacio!')            
         }
 
     }

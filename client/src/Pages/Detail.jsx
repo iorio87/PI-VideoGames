@@ -45,8 +45,9 @@ function Detail() {
       {loading && <Loader className="loader" />}
       
       {game && (   
-        <div>     
-        <button className="eightbit-btn--reset font" navigate={'/'}>volver</button>
+        <div className="btn-volver">     
+        <a className="eightbit-btn--reset font" href="/home">volver</a>
+        
         <div id="container">          
           <>
             <div class="product-details">

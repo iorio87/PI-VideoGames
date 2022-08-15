@@ -31,7 +31,7 @@
 	text-align: center;
 	border-radius: 5px;
 	overflow: hidden;
-	margin: 5em auto;
+	margin: 2em auto;
 	height: 600px;
 	width: 800px;
 	
@@ -59,31 +59,6 @@
 	margin: 0;
 	
 }
-
-/* #container .product-details h1:before{
-	position: absolute;
-	content: '';
-	right: 0%; 
-	top: 0%;
-	transform: translate(25px, -15px);
-	font-family: 'Farsan', cursive;
-	display: inline-block;
-	background: #FFA69E;
-	border-radius: 5px;
-	font-size: 14px;
-	padding: 1px;
-	color: #FFF;
-	margin: 0;
-	animation: chan-sh 6s ease infinite;
-
-} */
-
-/* @keyframes chan-sh {
-	from  {content: 'free shipping';}
-	to  {content: 'New';}
-	
-} */
-
 
 /* The most important information about the product */
 #container .product-details > p {
@@ -147,3 +122,6 @@
   font-size: 12px;
 }
 
+.btn-volver{
+	margin-top: 25px;
+}
