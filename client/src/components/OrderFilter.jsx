@@ -32,43 +32,43 @@ function OrderFilter() {
   return (
     <div className='select'>
       <div className='filter'>
-        <label htmlFor="ordenar">ORDENAR:</label>
-        <select name="ordenar" onChange={e => HandleOrder(e)}>
-          <option value="">Selecciona</option>
-          <option value="az">A-Z</option>
-          <option value="za">Z-A</option>
+        <label className='font' htmlFor="ordenar">ORDENAR:</label>
+        <select className='font' name="ordenar" onChange={e => HandleOrder(e)}>
+          <option className='font' value="">Selecciona</option>
+          <option className='font' value="az">A-Z</option>
+          <option className='font' value="za">Z-A</option>
 
         </select>
       </div>
 
       <div className='filter'>
-        <label htmlFor="genero font">GENERO:</label>
-        <select name="genero" onChange={e => HandleFIlterByGenre(e)}>
-          <option value="todos">Todos</option>
+        <label className='font' htmlFor="genero font">GENERO:</label>
+        <select className='font' name="genero" onChange={e => HandleFIlterByGenre(e)}>
+          <option className='font' value="todos">Todos</option>
           {/* Me traigo los generos del back y los inyecto */}
           {genres.map(genre => {
-            return <option value={genre.name} key={genre.id}>{genre.name}</option>
+            return <option className='font' value={genre.name} key={genre.id}>{genre.name}</option>
           })}
 
         </select>
       </div>
 
       <div className='filter'>
-        <label htmlFor="rating">RATING:</label>
-        <select name="rating" onChange={e => HandleOrder(e)}>
-          <option value="">Selecciona</option>
-          <option value="ascendente">Menor a Mayor</option>
-          <option value="descendente">Mayor a Menor</option>
+        <label className='font' htmlFor="rating">RATING:</label>
+        <select className='font' name="rating" onChange={e => HandleOrder(e)}>
+          <option className='font' value="">Selecciona</option>
+          <option className='font' value="ascendente">Menor a Mayor</option>
+          <option className='font' value="descendente">Mayor a Menor</option>
 
         </select>
       </div>
 
       <div className='filter'>
-        <label htmlFor="fuente">FUENTE:</label>
-        <select name="fuente" onChange={e => HandleFilterSource(e)}>
-          <option value="todos">Todos</option>
-          <option value="api">API</option>
-          <option value="agregado">Agregados</option>
+        <label className='font' htmlFor="fuente">FUENTE:</label>
+        <select className='font' name="fuente" onChange={e => HandleFilterSource(e)}>
+          <option className='font' value="todos">Todos</option>
+          <option className='font' value="api">API</option>
+          <option className='font' value="agregado">Agregados</option>
 
         </select>
       </div>

@@ -1,4 +1,5 @@
 import axios from "axios"
+import { toast } from 'react-toastify';
 export const GET_GAMES = 'GET_GAMES'
 export const SEARCH_GAMES = 'SEARCH_GAMES'
 export const GET_GENRES = 'GET_GENRES'
@@ -33,7 +34,7 @@ export function searchGames(name) {
       })
       .catch(err => {
         dispatch({ type: HIDE_LOADER })
-        alert(err.response.data)       
+        err(toast.error('Juego no existe!'))      
       })
   }
 }

@@ -1,10 +1,10 @@
 .btn-page{
-    margin: 0 10px;  
-    padding: 6px 3px;  
+    margin: 0 12px;  
+    padding: 6px 4px;  
     cursor: pointer;
     background: black;
     border: 2px solid #fdff00;
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline;        
     
 }
@@ -16,5 +16,9 @@
 
 .page-link{
     text-decoration: none;
-    color: white;
+    color: white;   
+}
+
+.page-link:hover{
+    color: #fdff00;
 }

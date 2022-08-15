@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Games from '../components/Games'
 import Header from '../components/Header'
@@ -8,6 +8,7 @@ import './home.css'
 
 function Home() {
   const {loading}= useSelector(state => state) 
+  const [show, setShow] = useState(false)
   
 
   return (
@@ -20,9 +21,10 @@ function Home() {
           <OrderFilter/>          
         </div>
         <div className='loader'>
+          {loading ? <Loader/>: <Games />}
 
-          <Games />
-          {loading && <Loader/>}
+          {/* {loading && <Loader/>}
+          <Games /> */}
         </div>
         
 

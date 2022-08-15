@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { searchGames } from "../store/actions";
 import { FaGamepad } from "react-icons/fa";
+import logo from '../img/logo.png'
 import "./header.css";
 
 function Header() {
@@ -15,13 +16,13 @@ function Header() {
         <FaGamepad className="fagame"/>
         Agregar Juego
       </NavLink>
-
       <h1 className="header-titulo">
         <span className="header-letra">G</span>A
         <span className="header-letra">M</span>E
         <span className="header-letra">S </span>A
         <span className="header-letra">P</span>P
       </h1>
+      <img className="logo" src={logo} alt="logo" width={50} height={50} />
 
       <form
         className="buscar-form"
