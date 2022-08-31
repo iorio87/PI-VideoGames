@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import Games from '../components/Games'
 import Header from '../components/Header'
@@ -7,9 +7,7 @@ import OrderFilter from '../components/OrderFilter'
 import './home.css'
 
 function Home() {
-  const {loading}= useSelector(state => state) 
-  const [show, setShow] = useState(false)
-  
+  const {loading}= useSelector(state => state)   
 
   return (
     <div className='bg'>
