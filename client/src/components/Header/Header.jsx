@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { searchGames } from "../store/actions";
+import { searchGames } from "../../store/actions";
 import { FaGamepad } from "react-icons/fa";
-import logo from '../img/logo.png'
+import logo from '../../img/logo.png'
 import "./header.css";
 
 function Header() {
