@@ -33,8 +33,8 @@ function OrderFilter() {
     <div className='select'>
       <div className='filter'>
         <label className='font' htmlFor="ordenar">ORDENAR:</label>
-        <select className='font' name="ordenar" onChange={e => HandleOrder(e)}>
-          <option className='font' value="">Selecciona</option>
+        <select className='font filter-selector' name="ordenar" onChange={e => HandleOrder(e)}>
+          <option className='font p-10 m-10' value="">Selecciona</option>
           <option className='font' value="az">A-Z</option>
           <option className='font' value="za">Z-A</option>
 
@@ -43,7 +43,7 @@ function OrderFilter() {
 
       <div className='filter'>
         <label className='font' htmlFor="genero font">GENERO:</label>
-        <select className='font' name="genero" onChange={e => HandleFIlterByGenre(e)}>
+        <select className='font filter-selector' name="genero" onChange={e => HandleFIlterByGenre(e)}>
           <option className='font' value="todos">Todos</option>
           {/* Me traigo los generos del back y los inyecto */}
           {genres.map(genre => {
@@ -55,7 +55,7 @@ function OrderFilter() {
 
       <div className='filter'>
         <label className='font' htmlFor="rating">RATING:</label>
-        <select className='font' name="rating" onChange={e => HandleOrder(e)}>
+        <select className='font filter-selector' name="rating" onChange={e => HandleOrder(e)}>
           <option className='font' value="">Selecciona</option>
           <option className='font' value="ascendente">Menor a Mayor</option>
           <option className='font' value="descendente">Mayor a Menor</option>
@@ -65,7 +65,7 @@ function OrderFilter() {
 
       <div className='filter'>
         <label className='font' htmlFor="fuente">FUENTE:</label>
-        <select className='font' name="fuente" onChange={e => HandleFilterSource(e)}>
+        <select className='font filter-selector' name="fuente" onChange={e => HandleFilterSource(e)}>
           <option className='font' value="todos">Todos</option>
           <option className='font' value="api">API</option>
           <option className='font' value="agregado">Agregados</option>

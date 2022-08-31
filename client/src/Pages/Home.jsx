@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Games from '../components/Games'
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import Loader from '../components/Loader'
 import OrderFilter from '../components/OrderFilter'
 import './home.css'

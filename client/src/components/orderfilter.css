@@ -19,3 +19,8 @@ option{
 .filter{
     padding: 5px 20px;
 }
+
+.filter-selector {
+    padding: 2px;
+}
+
