@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getGames } from '../store/actions/index'
-import Game from './Game'
+import { getGames } from '../../store/actions/index'
+import Game from '../Game/Game'
 import './games.css'
-import Pagination from './Pagination'
+import Pagination from '../Pagination/Pagination'
 
 
 function Games() {

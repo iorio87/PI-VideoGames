@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getGenres, FilterByGenre, FilterSource, Order } from '../store/actions/index'
+import { getGenres, FilterByGenre, FilterSource, Order } from '../../store/actions/index'
 import './orderfilter.css'
-import './buttons.css'
+import '../buttons.css'
 
 function OrderFilter() {
   const { genres } = useSelector(state => state)

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import Games from '../components/Games'
+import Games from '../components/Games/Games'
 import Header from '../components/Header/Header'
 import Loader from '../components/Loader'
-import OrderFilter from '../components/OrderFilter'
+import OrderFilter from '../components/OrderFilter/OrderFilter'
 import './home.css'
 
 function Home() {
@@ -22,9 +22,7 @@ function Home() {
         </div>
         <div className='loader'>
           {loading ? <Loader/>: <Games />}
-
-          {/* {loading && <Loader/>}
-          <Games /> */}
+          
         </div>
         
 
