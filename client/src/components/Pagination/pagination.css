@@ -22,3 +22,9 @@
 .page-link:hover{
     color: #fdff00;
 }
+
+.btn-current{
+    color: #fdff00;
+    font-weight: bolder;
+    font-size: 18px;
+}

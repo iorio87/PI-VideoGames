@@ -20,6 +20,7 @@ function Games() {
   const paginado = (pageNumber) => {    
     return setCurrentPage(pageNumber)
   }
+  console.log(currentPage);
   
   useEffect(() => {
     if (games.length === 0){
@@ -38,7 +39,7 @@ function Games() {
   return (    
     <div>      
       <div className='pagination font'>        
-        <Pagination gamesPerPage={gamesPerPage} games={games.length} paginado={paginado} />
+        <Pagination gamesPerPage={gamesPerPage} games={games.length} paginado={paginado} currentPage={currentPage}/>
       </div>
       <div className='contenedor'>
         {currentGames.map(e => {
