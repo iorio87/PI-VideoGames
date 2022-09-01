@@ -43,58 +43,65 @@ function Detail() {
     // otro detalle
     <div className="detail-container">
       {loading && <Loader className="loader" />}
-      
-      {game && (   
-        <div className="btn-volver">     
-        <a className="eightbit-btn--reset font" href="/home">volver</a>
-        
-        <div id="container">          
-          <>
-            <div class="product-details">
-              <h1>{game.name}</h1>              
 
-              <p class="information">
-                " {game.description.replace(/(<([^>]+)>)/gi, "")} "
-              </p>
+      {game && (
+        <div className="btn-volver">
+          <a className="eightbit-btn--reset font" href="/home">
+            volver
+          </a>
 
-              
-            </div>
+          <div id="container">
+            <>
+              <div class="product-details">
+                <h1>{game.name}</h1>
 
-            <div class="product-image">
-              <img
-                src={
-                  game.image
-                    ? game.image
-                    : "https://www.collinsdictionary.com/images/full/videogame_634861250_1000.jpg"
-                }
-                alt=""
-              />
-
-              <div className="detail-info">
-                <h2>Informacion:</h2>
-                <ul>
-                  <li>
-                    <strong>Fecha de Lanzamiento: </strong>{game.released}
-                  </li>
-                  <li>
-                    <strong>Rating: </strong>{game.rating}
-                  </li>
-                  <li>
-                    <strong>ID: </strong>{id}
-                  </li>
-                  <li>
-                    <strong>Plataformas: </strong>{game.platforms.map(e => <p key={e} className='plataformas'>{e} -</p> )}
-                  </li>
-                 
-                </ul>
+                <p class="information">
+                  " {game.description.replace(/(<([^>]+)>)/gi, "")} "
+                </p>
               </div>
-            </div>
-          </>
-        </div>
+
+              <div class="product-image">
+                <img
+                  src={
+                    game.image
+                      ? game.image
+                      : "https://www.collinsdictionary.com/images/full/videogame_634861250_1000.jpg"
+                  }
+                  alt=""
+                />
+
+                <div className="detail-info">
+                  <h2>Informacion:</h2>
+                  <ul>
+                    <li>
+                      <strong>Fecha de Lanzamiento: </strong>
+                      {game.released}
+                    </li>
+                    <li>
+                      <strong>Rating: </strong>
+                      {game.rating}
+                    </li>
+                    <li>
+                      <strong>ID: </strong>
+                      {id}
+                    </li>
+                    <li>
+                      <strong>Plataformas: </strong>
+                      {game.platforms.map((e) => (                     
+                        <p key={e} className="plataformas">
+                          {e}
+                        </p>                   
+                        
+                      ))}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </>
+          </div>
         </div>
       )}
-      </div>
-    
+    </div>
   );
 }
 
