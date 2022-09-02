@@ -20,7 +20,7 @@ function Games() {
   const paginado = (pageNumber) => {    
     return setCurrentPage(pageNumber)
   }
-  console.log(currentPage);
+  
   
   useEffect(() => {
     if (games.length === 0){

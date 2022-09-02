@@ -6,6 +6,13 @@ import { toast } from 'react-toastify';
 import './agregar.css'
 import '../components/buttons.css'
 
+var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+	    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+	    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+	    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+	    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+	    '(\\#[-a-z\\d_]*)?$','i'); // validate fragmen
+
 export function validate(input) {
     let errors = {};
     if (input.name === '') {
@@ -32,6 +39,10 @@ export function validate(input) {
 
     if (!input.platforms.length) {
         errors.platforms = 'Debe seleccionar al menos 1 plataforma!'
+    }
+
+    if(!urlPattern.test(input.image)){
+        errors.image = 'Debe ingresar una URL valida!'
     }
 
     return errors;
@@ -151,6 +162,9 @@ function Agregar() {
                 <div className='agregar-div'>
                     <label htmlFor="image" className='agregar-label font'>Imagen: </label>
                     <input type="text" id="image" name='image' className='agregar-input font' value={input.image} onChange={handleChange} />
+                    {errors.image && (
+                        <p className="danger">{errors.image}</p>
+                    )}
                 </div>
 
                 <div className='agregar-div agregar-descripcion'>
