@@ -8,7 +8,7 @@
 
 .detail-container:after {
   content: "";
-  background-image: url(../img/detail.jpg);  
+  background-image: url(../img/detail2.jpg);  
   background-size: cover;
   background-attachment: fixed; 
   min-height: 100vh;
