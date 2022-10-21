@@ -5,7 +5,7 @@ import "./game.css";
 function Game({ name, image, id, genres, rating }) {
   return (
    
-    // otra card
+    
     <NavLink to={`detail/${id}`} className="">
       <div className="card-wrapper">
         <div className="card-container">

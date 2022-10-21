@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
+import GetGameDetail from "../services/getGameDetail";
 import "./detail.css";
 
 function Detail() {  
@@ -13,7 +13,7 @@ function Detail() {
 
   useEffect(() => {
     dispatch({ type: "SHOW_LOADER" });
-    axios.get(`http://localhost:3001/videogame/${id}`).then((detail) => {
+    GetGameDetail(id).then((detail) => {
       setgame(detail.data);
       dispatch({ type: "HIDE_LOADER" });
     });
